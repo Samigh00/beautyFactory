@@ -1,9 +1,8 @@
 <?php
 include('../controller/productController.php');
 include('../model/Product.php');
-
-
-/*if (isset($_POST ['submit'])) {
+$productController = new productController();
+if (isset($_POST ['submit'])) {
     $name = $_POST['Product_name'];
     $qty = $_POST['qty'];
     $price = $_POST['product_price'];
@@ -20,15 +19,15 @@ include('../model/Product.php');
     } elseif (!preg_match("/^[0-9]*$/",$qty)) {
         header("location: ../view/AddProduct.php?product=qty");
         exit();
-    }else*/
-
-        $productController = new productController();
+    }else
         $product_name = $_POST['Product_name'];
     $product_price = $_POST['product_price'];
     $qty = $_POST['qty'];
     $product = new product($product_name, $product_price, $qty);
     $productController->AddProduct($product, $productController->conn);
     header('Location: ../view/productsList.php');
+}
+
 
 ?>
 

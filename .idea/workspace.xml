@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fc107c2-1b06-441a-93b4-4745b9f68193" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-office/core/addProductCore.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back-office/core/addProductCore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Back-office/core/updateProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back-office/core/updateProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-office/view/AddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back-office/view/AddProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-office/view/edit_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back-office/view/edit_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-office/view/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back-office/view/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +54,15 @@
       <updated>1650138620696</updated>
       <workItem from="1650138621864" duration="10698000" />
       <workItem from="1650158236981" duration="1435000" />
-      <workItem from="1650502070506" duration="2033000" />
+      <workItem from="1650502070506" duration="2198000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
