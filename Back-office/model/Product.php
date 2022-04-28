@@ -1,22 +1,42 @@
 <?php
-class product{
+class product
+{
 
     private $id_product;
     private $product_name;
     private $product_price;
     private $qty;
+    private $catg;
 
     /**
      * @param $id_product
      * @param $product_name
      * @param $product_price
      * @param $qty
+     * @param $catg
      */
-    public function __construct( $product_name, $product_price, $qty)
+    public function __construct( $product_name, $product_price, $qty,$catg)
     {
         $this->product_name = $product_name;
         $this->product_price = $product_price;
         $this->qty = $qty;
+        $this->catg=$catg;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCatg()
+    {
+        return $this->catg;
+    }
+
+    /**
+     * @param mixed $catg
+     */
+    public function setCatg($catg)
+    {
+        $this->catg = $catg;
     }
 
     /**

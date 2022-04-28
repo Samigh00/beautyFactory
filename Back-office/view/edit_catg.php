@@ -1,7 +1,16 @@
 <?php
+
 include('../controller/categorieController.php');
-$categorieController = new categorieController();
-$response = $categorieController->showCategorie($categorieController->conn1);
+include ('../model/categorie.php');
+$catgorieController=new categorieController();
+
+$response = $catgorieController->getCategorieByName($_POST['id_categ'], $catgorieController->conn1);
+
+while ($catgU = $response->fetch()) {
+    $categorie=new categorie($catgU['nom_catg']);
+    $categorie->setIdCatg($catgU['id_categ']);
+}
+
 ?>
 <?php include 'header.php' ?>
 <div class="content-wrapper">
@@ -29,65 +38,29 @@ $response = $categorieController->showCategorie($categorieController->conn1);
         <div class="col-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h4 class="box-title">About Product</h4>
+                    <h4 class="box-title">add Category</h4>
                 </div>
                 <div class="box-body">
-                    <form action="../core/addProductCore.php" method="post" class="forms-sample"
+                    <form action="../core/updateCategorie.php" method="post" class="forms-sample"
                           enctype="multipart/form-data" name="AddProduct">
+                        <input type="text" name="id_categ" value="<?php echo $categorie->getIdCatg() ?>">
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="fw-700 fs-16 form-label">Product Name</label>
-                                        <input type="text" name="Product_name" class="form-control"
-                                               placeholder="Product Name">
+                                        <label class="fw-700 fs-16 form-label">Category Name</label>
+                                        <input type="text" name="Category_name" value="<?php echo $categorie->getNomCatg() ?>" class="form-control"
+                                               placeholder="Category Name">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="fw-700 fs-16 form-label">Categorie</label>
-                                        <select name="nom_catg">
-                                            <?php
-                                            while($catg =$response->fetch()){
-                                            ?>
-                                            <option name="nom_catg"> <?php echo$catg['nom_catg']?></option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="fw-700 fs-16 form-label">Price</label>
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><i class="ti-money"></i></div>
-                                            <input type="text" name="product_price" class="form-control"
-                                                   placeholder="270">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="fw-700 fs-16 form-label">Quantity </label>
-                                        <input type="text" name="qty" class="form-control" placeholder="Quantity">
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="form-actions mt-10">
                             <button type="submit" name="submit" class="btn btn-primary" onclick="Verif()"><i
-                                        class="fa fa-check"></i> Save
+                                    class="fa fa-check"></i> Save
                             </button>
                             <button type="button" class="btn btn-danger">Cancel</button>
-       x                 </div>
+                            x                 </div>
                         <div class="form-actions mt-10">
                             <?php
                             $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

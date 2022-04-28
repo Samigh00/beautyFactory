@@ -20,10 +20,13 @@ if (isset($_POST ['submit'])) {
         header("location: ../view/AddProduct.php?product=qty");
         exit();
     }else
-        $product_name = $_POST['Product_name'];
+
+    $product_name = $_POST['Product_name'];
+    $catg = $_POST['nom_catg'];
     $product_price = $_POST['product_price'];
     $qty = $_POST['qty'];
-    $product = new product($product_name, $product_price, $qty);
+
+    $product = new product($product_name, $product_price, $qty,$catg);
     $productController->AddProduct($product, $productController->conn);
     header('Location: ../view/productsList.php');
 }

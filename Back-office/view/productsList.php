@@ -2,8 +2,8 @@
 include ('../controller/productController.php');
 $productController = new productController();
 $response = $productController->showProduct($productController->conn);
-
 ?>
+
 <?php include 'header.php'?>
   <div class="content-wrapper">
 	  <div class="container-full">
@@ -22,13 +22,10 @@ $response = $productController->showProduct($productController->conn);
 						</nav>
 					</div>
 				</div>
-				
 			</div>
 		</div>   
 
-		<!-- Main content -->
 		<section class="content">
-
 		  <div class="row fx-element-overlay">
               <?php
               while($product = $response->fetch())
@@ -49,13 +46,14 @@ $response = $productController->showProduct($productController->conn);
 						<div class="fx-card-content text-start">							
 							<div class="product-text">
 								<h2 class="pro-price text-blue"><?php echo $product["product_price"]; ?></h2>
+								<h2 class="box-body"><?php echo $product["nom_catg"]; ?></h2>
 								<h4 class="box-title mb-0"  ><?php echo $product["Product_name"]; ?></h4>
                                 <h4 class="box-title mb-0"  ><?php echo $product["qty"]; ?></h4>
                                 <form action="../core/deleteProduct.php" method="POST">
                                 <button type="submit" name="id_product" value="<?php echo $product['id_product'];?>" class="btn btn-primary"> <i class="fa fa-check"></i> delete</button>
                                 </form>
                                 <form action="edit_product.php" method="POST" enctype="multipart/form-data">
-                                    <button type="submit" name="id_product" value="<?php echo $product['id_product'];?>" class="btn btn-primary"> <i class="fa fa-check"></i> update</button>
+                                    <button type="submit" name="id_product" value="<?php echo $product['id_product'],["product_price"],["Product_name"],$product["qty"];?>" class="btn btn-primary"> <i class="fa fa-check"></i> update</button>
                                 </form>
 							</div>
 						</div>
