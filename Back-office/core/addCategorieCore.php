@@ -14,7 +14,7 @@ if (isset($_POST ['submit'])) {
 
         $categorie_name = $_POST['Category_name'];
     $categorie = new categorie($categorie_name);
-    $catgorieController->AddCategorie($categorie, $catgorieController->conn);
+    $catgorieController->AddCategorie($categorie, $catgorieController->conn1);
     header('Location: ../view/catgsList.php');
 }
 

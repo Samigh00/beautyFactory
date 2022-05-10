@@ -3,7 +3,6 @@ include ('../controller/productController.php');
 $productController = new productController();
 $response = $productController->showProduct($productController->conn);
 ?>
-
 <?php include 'header.php'?>
   <div class="content-wrapper">
 	  <div class="container-full">
@@ -12,13 +11,12 @@ $response = $productController->showProduct($productController->conn);
 			<div class="d-flex align-items-center">
 				<div class="me-auto">
 					<h4 class="page-title">Products</h4>
-					<div class="d-inline-block align-items-center">
 						<nav>
-							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
-								<li class="breadcrumb-item" aria-current="page">e-Commerce</li>
-								<li class="breadcrumb-item active" aria-current="page">Products</li>
 							</ol>
+                            <td>
+                                <a href="./PDF.php" class="btn btn-primary"">Imprimer La List </a>
+                            </td>
 						</nav>
 					</div>
 				</div>
@@ -27,10 +25,7 @@ $response = $productController->showProduct($productController->conn);
 
 		<section class="content">
 		  <div class="row fx-element-overlay">
-              <?php
-              while($product = $response->fetch())
-              {
-              ?>
+              <?php while($product = $response->fetch()) { ?>
 			  <div class="col-12 col-lg-6 col-xl-4">
 				  <div class="box">
 					<div class="fx-card-item">
@@ -61,10 +56,7 @@ $response = $productController->showProduct($productController->conn);
 				  </div>
 				  <!-- /.box -->				  
 			  </div>
-                  <?php
-              }
-              $response->closeCursor();
-              ?>
+                  <?php } $response->closeCursor(); ?>
 		  </div>
 
 		</section>

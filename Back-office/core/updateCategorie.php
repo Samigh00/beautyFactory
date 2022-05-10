@@ -27,7 +27,7 @@ if (isset($_POST ['submit'])) {
     $catgorie->setIdCatg($id_categ);
 
 
-    $catgorieController->updateCategorie($catgorie, $catgorieController->conn);
+    $catgorieController->updateCategorie($catgorie, $catgorieController->conn1);
     header('Location: ../view/catgsList.php');
 }
 ?>

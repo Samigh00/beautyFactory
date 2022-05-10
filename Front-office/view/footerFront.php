@@ -82,6 +82,7 @@
 <!-- **jQuery** -->
 <script src="../assets/js/jquery-1.11.3.min.js"></script>
 <script src="../assets/js/jquery.js"></script>
+
 <script type="text/javascript" src="../assets/js/jquery.sticky.min.js"></script>
 <script src="../assets/js/jquery-ui.js" type="text/javascript"></script>
 <script src="../assets/js/jsplugins.js" type="text/javascript"></script>

@@ -1,7 +1,7 @@
 <?php
 include('../controller/categorieController.php');
 $categrieController = new categorieController();
-$response = $categrieController->showCategorie($categrieController->conn);
+$response = $categrieController->showCategorie($categrieController->conn1);
 ?>
 
 <?php include 'header.php' ?>

@@ -15,7 +15,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">Edit</li>
                             </ol>
                         </nav>
-                    </div>
+                        </div>
                 </div>
 
             </div>
@@ -31,7 +31,7 @@
                             <form action="../core/addCategorieCore.php" method="post" class="forms-sample"
                                   enctype="multipart/form-data" name="AddProduct">
                                 <div class="form-body">
-                                    <div class="row">
+                                        <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="fw-700 fs-16 form-label">Category Name</label>

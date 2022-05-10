@@ -49,13 +49,13 @@ $response = $categorieController->showCategorie($categorieController->conn1);
                                     <div class="form-group">
                                         <label class="fw-700 fs-16 form-label">Categorie</label>
                                         <select name="nom_catg">
-                                            <?php
-                                            while($catg =$response->fetch()){
-                                            ?>
-                                            <option name="nom_catg"> <?php echo$catg['nom_catg']?></option>
-                                            <?php
-                                            }
-                                            ?>
+                                                <?php
+                                                while($catg =$response->fetch()){
+                                                ?>
+                                                <option name="nom_catg"> <?php echo$catg['nom_catg']?></option>
+                                                <?php
+                                                }
+                                                ?>
                                         </select>
                                     </div>
                                 </div>
