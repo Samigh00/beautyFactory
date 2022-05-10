@@ -3,20 +3,28 @@
 class productController
 {
     public $conn;
+    public $conn1;
     function __construct()
     {
         include ('../config/connexion.php');
+
         $conf= new Connexion();
         $this->conn=$conf->cnx;
+
+    }
+    function __construct1(){
+        include ('../config/connexion1.php');
+        $conf1= new Connexion1();
+        $this->conn1=$conf1->cnx;
     }
     function AddProduct($product,$con)
     {
         $product_name=$product->getProductName();
+        $catg=$product->getCatg();
         $product_price = $product->getProductPrice();
         $qty=$product->getQty();
-        $sql = "INSERT INTO product (Product_name ,product_price,qty) 
-        VALUES ('$product_name','$product_price','$qty')";
-        echo $sql;
+        $sql = "INSERT INTO product (Product_name ,product_price,qty,nom_catg) 
+        VALUES ('$product_name','$product_price','$qty','$catg')";
         $con->exec($sql);
     }
     function deleteProduct($id_product,$con)
@@ -31,13 +39,12 @@ class productController
     function updateProduct($product,$con)
     {
         $id_product=$product->getIdProduct();
-
         $product_name=$product->getProductName();
         $product_price = $product->getProductPrice();
+        $catg=$product->getCatg();
         $qty=$product->getQty();
 
-        $sql = "UPDATE product SET product_name= '$product_name',product_price= '$product_price', qty= '$qty' WHERE (id_product= $id_product)";
-        echo $sql;
+        $sql = "UPDATE product SET product_name= '$product_name',product_price= '$product_price', qty= '$qty',nom_catg='$catg' WHERE (id_product= $id_product)";
         $con->exec($sql);
     }
     function showProduct($con)

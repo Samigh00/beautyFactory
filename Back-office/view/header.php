@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://webkit-admin-template.multipurposethemes.com/bs5/images/favicon.ico">
+    <link rel="icon" href="http://webkit-admin-template.multipurposethemes.com/bs5/images/favicon.ico">
 
     <title>WebkitX Admin - Dashboard  Blank Page </title>
 
@@ -23,7 +23,6 @@
 <body class="hold-transition light-skin sidebar-mini theme-primary fixed">
 
 <div class="wrapper">
-    <div id="loader"></div>
 
     <header class="main-header">
         <div class="d-flex align-items-center logo-box justify-content-start">
@@ -494,24 +493,4 @@
             </div>
         </section>
     </aside>
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <div class="container-full">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="d-flex align-items-center">
-                    <div class="me-auto">
-                        <h4 class="page-title">Edit</h4>
-                        <div class="d-inline-block align-items-center">
-                            <nav>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
-                                    <li class="breadcrumb-item" aria-current="page">e-Commerce</li>
-                                    <li class="breadcrumb-item active" aria-current="page">Edit</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
 
-                </div>
-            </div>

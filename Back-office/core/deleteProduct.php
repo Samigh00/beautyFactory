@@ -1,5 +1,4 @@
 <?php
-
 include('../controller/productController.php');
 $productController=new productController();
 

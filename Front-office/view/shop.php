@@ -3,7 +3,6 @@ include('../model/Product.php');
 include('../controller/productController.php');
 $productController = new productController();
 $response = $productController->showProduct($productController->conn);
-
 ?>
 <?php include 'headerFront.php' ?>
 
@@ -26,10 +25,7 @@ $response = $productController->showProduct($productController->conn);
         <aside class="widget searchwidget">
             <h3 class="border-title"> Product <span>Search</span></h3>
             <form method="post" action="#" name="searchform" class="subscribe-frm">
-                <p>
-                    <input type="text" name="username" placeholder="Enter Keyword" required>
-                    <i class="fa fa-search icon"></i>
-                </p>
+
             </form>
         </aside>
         <div class="clear"></div>
@@ -115,11 +111,15 @@ $response = $productController->showProduct($productController->conn);
             </div>
         </aside>
     </section>
-    <section id="primary" class="page-with-sidebar with-left-sidebar">
-<?php
-while ($product = $response->fetch()) {
-    ?>
 
+    <section id="primary" class="page-with-sidebar with-left-sidebar">
+
+        <form method="post" action="../core/sendMail.php">
+            <p>
+                <input type="email" name="email" id="email" placeholder="Enter Mail" required>
+
+            </p>
+        <?php  while ($product = $response->fetch()) { ?>
     <div class="column dt-sc-one-third first">
 
             <div class="product-border">
@@ -128,22 +128,26 @@ while ($product = $response->fetch()) {
                         <img src="../assets/images/product/product-img1.png" alt="" title="">
                     </a>
                 </div>
+
+
                 <div class="product-details">
                     <div class="dt-sc-price"><?php echo $product["Product_name"]; ?> </div>
 
                     <div class="dt-sc-price"><?php echo $product["product_price"]; ?> </div>
                     <div class="dt-sc-price"><?php echo $product["qty"]; ?> </div>
                     <div class="hr-invisible-very-very-small"></div>
-                    <a class="dt-sc-button btn-eff3" data-text="Add to Cart" href="shop-cart.html">
+                    <button class="dt-sc-button btn-eff3" data-text="Add to Cart" >
                         <span>Add to Cart</span>
-                    </a>
+                    </button>
                 </div>
+
             </div>
-        <?php } ?>
+
         <div class="clear"></div>
 
     </div>
-
+<?php } ?>
+  </form>
     <div class="clear"></div>
     <div class="hr-invisible-small"></div>
     <div class="pagination">
